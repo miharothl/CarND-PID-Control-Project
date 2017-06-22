@@ -35,13 +35,31 @@ int main()
   PID pid_steering;
   PID pid_throttle;
   // TODO: Initialize the pid variable.
-  double Kp = 0.25;
-  double Kd = 40.0;
-  double Ki = 0.154;
+
+
+// Step 1: Set speed to 40Mph. Set Kp. Completes half of the track, doesn't oscillate to much.
+//  double Kp = 0.05;
+//  double Ki = 0.;
+//  double Kd = 0.;
+
+// Step 2: Speed 40Mph. Set Kd. Oscillation dampened. Discrete steering. Late in sharp turns.
+//  double Kp = 0.05;
+//  double Ki = 0.01;
+//  double Kd = 0;
+
+// Step 3: Speed 40Mph. Set Ki. Continuous steering, completes the track.
+//  double Kp = 0.05;
+//  double Ki = 0.01;
+//  double Kd = 2.;
+
+
+// Step 4: Speed 40Mph. Increased Ki to improve sharp turns. Increased speed to 60Mph. Completes track. Gentle turns.
+  double Kp = 0.06;
+  double Ki = 0.05;
+  double Kd = 2;
 
   pid_steering.Init(Kp, Ki, Kd);
   pid_throttle.Init(1.4, 10., 5.);
-
 
   h.onMessage([&pid_steering, &pid_throttle](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -70,6 +88,7 @@ int main()
 
           double cte_throttle;
           double target_speed = 40.;
+          target_speed = 60.;
 
           cte_throttle = -(target_speed - speed)/10.;
 

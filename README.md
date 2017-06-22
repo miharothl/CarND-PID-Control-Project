@@ -3,6 +3,36 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflection
+
+Proportionall-Integral-Derivative (PID) controller had to be implemented. PID controller
+is a control feedback loop that continuously calculates the error between the desired and
+measured value. 
+
+In PID controller:
+
+* P accounts for present values of the error. 
+* I accounts for past values of the error. Used to account for systematic bias, e.g. steering wheel missalignment.
+* D accounts for possuble future values of the error. Prevents overshoot.
+
+[Final Parameters](https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo_videos/PID09%20-%20final%20settings.m4v)
+
+
+Two controllers were used in order to drive the car around the track in the simulator. One to controll
+steering and one to control throttle. Hyperparameters were set manually to:
+
+* steering PID - Kp = 0.06; Ki = 0.05; Kd = 2.0;
+* throttle PID - Kp = 1.40; Ki = 10.0; Kd = 5.0;
+
+
+
+
+
+ 
+
+
+---
+
 ## Dependencies
 
 * cmake >= 3.5
