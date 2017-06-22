@@ -19,8 +19,8 @@ Demo videos show the impact of different PID components:
 
 1. [Vehicle oscilates when only P is used.](https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo/01-P.mov)
 2. [Overshoot is prevented when both P and D are used. Steering is discerete.](https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo/02-PD.mov)
-3. [Continous delayed steering when only I is used.](https://github.com/miharothl/CarND-PID-Control-Project/demo/blob/master/03-I.mov)
-4. [Complete PID controler.](https://github.com/miharothl/CarND-PID-Control-Project/demo/blob/master/04-PID.mov)
+3. [Continous delayed steering when only I is used.](https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo/03-I.mov)
+4. [Complete PID controler.](https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo/04-PID.mov)
 
 Two controllers were used in order to drive the car around the track in the simulator. One to control
 steering and one to control throttle.
