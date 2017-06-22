@@ -15,15 +15,21 @@ In PID controller:
 * I accounts for past values of the error. Used to account for systematic bias, e.g. steering wheel missalignment.
 * D accounts for possuble future values of the error. Prevents overshoot.
 
-[Final Parameters](https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo_videos/PID09%20-%20final%20settings.m4v)
+Demo videos show the impact of different PID components:
 
+* [When only P is used, vechilece oscilates]  (https://github.com/miharothl/CarND-PID-Control-Project/demo/01-PID.mov
+* [When both P and D are used, D component prevents overshoot] (https://github.com/miharothl/CarND-PID-Control-Project/demo/02-PD.mov
+* [If only I is used, past errors are minimized]  (https://github.com/miharothl/CarND-PID-Control-Project/demo/03-I.mov
+* [Complete PID controler]     (https://github.com/miharothl/CarND-PID-Control-Project/demo/04-PID.mov
 
 Two controllers were used in order to drive the car around the track in the simulator. One to controll
-steering and one to control throttle. Hyperparameters were set manually to:
+steering and one to control throttle.
+ 
+Hyperparameters Kp, Ki and Kd determine how much each of the component contributes to
+the calculated error. They were set manually:
 
 * steering PID - Kp = 0.06; Ki = 0.05; Kd = 2.0;
 * throttle PID - Kp = 1.40; Ki = 10.0; Kd = 5.0;
-
 
 
 
