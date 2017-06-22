@@ -5,37 +5,38 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Reflection
 
-Proportionall-Integral-Derivative (PID) controller had to be implemented. PID controller
+Proportional-Integral-Derivative (PID) controller had to be implemented. PID controller
 is a control feedback loop that continuously calculates the error between the desired and
 measured value. 
 
 In PID controller:
 
 * P accounts for present values of the error. 
-* I accounts for past values of the error. Used to account for systematic bias, e.g. steering wheel missalignment.
-* D accounts for possuble future values of the error. Prevents overshoot.
+* I accounts for past values of the error compensates for systematic bias, e.g. steering wheel misalignment.
+* D accounts for possible future values of the error e.g. it prevents overshoot.
 
 Demo videos show the impact of different PID components:
 
-[When only P is used, vechilece oscilates]  (https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo/01-P.mov)
-* [When both P and D are used, D component prevents overshoot] (https://github.com/miharothl/CarND-PID-Control-Project/demo/02-PD.mov)
-* [If only I is used, past errors are minimized]  (https://github.com/miharothl/CarND-PID-Control-Project/demo/03-I.mov)
-* [Complete PID controler]     (https://github.com/miharothl/CarND-PID-Control-Project/demo/04-PID.mov)
+1. [Vehicle oscilates when only P is used.](https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo/01-P.mov)
+2. [Overshoot is prevented when both P and D are used. Steering is discerete.](https://github.com/miharothl/CarND-PID-Control-Project/demo/02-PD.mov)
+3. [Continous delayed steering when only I is used.](https://github.com/miharothl/CarND-PID-Control-Project/demo/03-I.mov)
+4. [Complete PID controler.](https://github.com/miharothl/CarND-PID-Control-Project/demo/04-PID.mov)
 
-Two controllers were used in order to drive the car around the track in the simulator. One to controll
+Two controllers were used in order to drive the car around the track in the simulator. One to control
 steering and one to control throttle.
  
-Hyperparameters Kp, Ki and Kd determine how much each of the component contributes to
+Hyper-parameters Kp, Ki and Kd determine how much each of the component contributes to
 the calculated error. They were set manually:
 
 * steering PID - Kp = 0.06; Ki = 0.05; Kd = 2.0;
 * throttle PID - Kp = 1.40; Ki = 10.0; Kd = 5.0;
 
+The process of choosing steering hyper parameters:
 
-
-
- 
-
+1. Set speed to 40Mph. Set Kp so vehicle doesn't oscillates too much. Vehicle completes half of the track.
+2. Speed 40Mph. Set Kd. Oscillation dampened. Steering is discrete. Late in sharp turns.
+3. Speed 40Mph. Set Ki. Continuous steering, completes the track.
+4. Speed 40Mph. Increased Ki to improve sharp turns. Increased speed to 60Mph. Completes track. Gentle turns.
 
 ---
 
