@@ -17,7 +17,7 @@ In PID controller:
 
 Demo videos show the impact of different PID components:
 
-* [When only P is used, vechilece oscilates]  (https://github.com/miharothl/CarND-PID-Control-Project/demo/01-P.mov)
+[When only P is used, vechilece oscilates]  (https://github.com/miharothl/CarND-PID-Control-Project/blob/master/demo/01-P.mov)
 * [When both P and D are used, D component prevents overshoot] (https://github.com/miharothl/CarND-PID-Control-Project/demo/02-PD.mov)
 * [If only I is used, past errors are minimized]  (https://github.com/miharothl/CarND-PID-Control-Project/demo/03-I.mov)
 * [Complete PID controler]     (https://github.com/miharothl/CarND-PID-Control-Project/demo/04-PID.mov)
